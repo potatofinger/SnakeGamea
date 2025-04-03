@@ -61,7 +61,11 @@ namespace SnakeGamea
                 Y = Snake[Snake.Count - 1].Y
             };
             Snake.Add(body);
-            food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+            food = new Circle
+            {
+                X = rand.Next(2, maxWidth),
+                Y = rand.Next(2, maxHeight)
+            };
         }
         private void StartGame(object sender, EventArgs e)
         {
@@ -127,6 +131,12 @@ namespace SnakeGamea
                     Snake[i].Y * Settings.Height,
                     Settings.Width, Settings.Height
                     ));
+                canvas.FillEllipse(Brushes.Black, new Rectangle
+                   (
+                   food.X * Settings.Width,
+                   food.Y * Settings.Height,
+                   Settings.Width, Settings.Height
+                   ));
             }
         }
 
@@ -141,13 +151,13 @@ namespace SnakeGamea
             {
                 Settings.direction = "right";
             }
-            if (goDown)
-            {
-                Settings.direction = "down";
-            }
             if (goUp)
             {
                 Settings.direction = "up";
+            }
+            if (goDown)
+            {
+                Settings.direction = "down";
             }
 
 
@@ -163,11 +173,11 @@ namespace SnakeGamea
                         case "right":
                             Snake[i].X++;
                             break;
-                        case "down":
-                            Snake[i].Y++;
-                            break;
                         case "up":
                             Snake[i].Y--;
+                            break;
+                        case "down":
+                            Snake[i].Y++;
                             break;
                     }
                     if (Snake[i].X < 0)
