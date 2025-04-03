@@ -41,11 +41,12 @@
             // picCanvas
             // 
             picCanvas.BackColor = SystemColors.ControlDark;
-            picCanvas.Location = new Point(13, 13);
+            picCanvas.Location = new Point(154, 50);
             picCanvas.Name = "picCanvas";
-            picCanvas.Size = new Size(52, 50);
+            picCanvas.Size = new Size(488, 503);
             picCanvas.TabIndex = 0;
             picCanvas.TabStop = false;
+            picCanvas.Click += picCanvas_Click;
             picCanvas.Paint += updateGraphics;
             // 
             // txtScore
@@ -85,18 +86,19 @@
             // 
             // btnStart
             // 
-            btnStart.Location = new Point(351, 270);
+            btnStart.Location = new Point(726, 519);
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(75, 23);
             btnStart.TabIndex = 4;
             btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(854, 615);
             Controls.Add(btnStart);
             Controls.Add(txtHighscore);
             Controls.Add(label2);

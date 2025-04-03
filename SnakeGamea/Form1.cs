@@ -37,13 +37,13 @@ namespace SnakeGamea
             }
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
             gameTimer.Start();
-        }   
+        }
 
         private void GameOver()
         {
             gameTimer.Stop();
-           btnStart.Enabled = true;
-            if ( score > highScore)
+            btnStart.Enabled = true;
+            if (score > highScore)
             {
                 highScore = score;
                 txtHighscore.Text = "High Score: " + Environment.NewLine + highScore;
@@ -61,7 +61,7 @@ namespace SnakeGamea
                 Y = Snake[Snake.Count - 1].Y
             };
             Snake.Add(body);
-            food = new Circle {  X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+            food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
         }
         private void StartGame(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace SnakeGamea
             }
             if (goUp)
             {
-                Settings.direction = "up";  
+                Settings.direction = "up";
             }
 
 
@@ -210,6 +210,15 @@ namespace SnakeGamea
             }
             picCanvas.Invalidate();
         }
-      
-            }
+
+        private void picCanvas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            RestartGame();
+        }
+    }
 }
